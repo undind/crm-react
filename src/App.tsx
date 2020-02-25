@@ -7,9 +7,9 @@ import Signup from './pages/Signup';
 const App = () => {
     return (
         <Switch>
-            <Route to='/signin' component={Signin}></Route>
-            <Route to='/signup' component={Signup}></Route>
-            <Redirect from='/' to='/signin'></Redirect>
+            <Route exact path='/signin' component={Signin} />
+            <Route exact path='/signup' component={Signup} />
+            <Redirect from='/' to='/signin' />
         </Switch>
     );
 };
