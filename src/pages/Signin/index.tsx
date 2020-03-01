@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Form, Icon, Input, Button } from 'antd';
+import { Form, Input, Button } from 'antd';
 
 import { generateFormFields } from '../../services/helpers';
 
@@ -15,12 +15,6 @@ const Signin = () => {
                             <Input
                                 size='large'
                                 type={item.type}
-                                prefix={
-                                    <Icon
-                                        type={item.iconType}
-                                        style={{ color: 'rgba(0,0,0,.25)' }}
-                                    />
-                                }
                                 placeholder={item.placeholder}
                             />
                         </Form.Item>
