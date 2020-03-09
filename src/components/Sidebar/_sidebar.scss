@@ -1,7 +1,7 @@
 .trigger {
-  margin-left: 20px;
+  margin-left: 16px;
   & svg {
-    fill: #fff;
+    fill: #000;
     width: 20px;
     height: 20px;
   }
@@ -11,5 +11,21 @@
   text-align: center;
   h2 {
     color: #fff;
+  }
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+.sidebar {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logout {
+    margin-right: 16px;
   }
 }
