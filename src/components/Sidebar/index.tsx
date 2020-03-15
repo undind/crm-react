@@ -21,6 +21,7 @@ const Sidebar: FC<SidebarTypes> = ({ collapsed }) => {
     return (
         <Sider
             trigger={null}
+            width='220px'
             collapsible
             collapsed={collapsed}
             style={{

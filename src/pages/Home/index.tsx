@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { Layout } from 'antd';
 
 import { Sidebar, Section, HeaderApp, ContentApp } from '../../components';
+import HomePage from './components/HomePage';
 
 const Home: FC = () => {
     const [collapsed, setCollapsed] = useState(false);
@@ -16,7 +17,7 @@ const Home: FC = () => {
                 <HeaderApp toggle={toggle} collapsed={collapsed} />
                 <ContentApp>
                     <Switch>
-                        <Route />
+                        <Route exact path='/home' component={HomePage} />
                     </Switch>
                 </ContentApp>
             </Layout>
