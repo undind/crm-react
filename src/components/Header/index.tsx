@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Layout, Button } from 'antd';
-import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
+import { MenuUnfoldOutlined, MenuFoldOutlined, LogoutOutlined } from '@ant-design/icons';
 
 const { Header } = Layout;
 
@@ -18,6 +18,7 @@ const HeaderApp: FC<HeaderTypes> = ({ collapsed, toggle }) => {
             })}
             <Button type="link" className="sidebar__logout">
                 Logout
+                <LogoutOutlined />
             </Button>
         </Header>
     );
