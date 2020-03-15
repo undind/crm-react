@@ -8,10 +8,10 @@ import Home from './pages/Home';
 const App = () => {
     return (
         <Switch>
-            <Route exact path='/signin' component={Signin} />
-            <Route exact path='/signup' component={Signup} />
-            <Route exact path='/home' component={Home} />
-            <Redirect from='/' to='/home' />
+            <Route exact path="/signin" component={Signin} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/home" component={Home} />
+            <Redirect from="/" to="/home" />
         </Switch>
     );
 };

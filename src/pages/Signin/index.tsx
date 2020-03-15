@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Input, Button } from 'antd';
 
 import { generateFormFields } from '../../services/helpers';
 
-const Signin = () => {
+const Signin: FC = () => {
     return (
         <div className='form-page'>
             <h1>Sign In</h1>
