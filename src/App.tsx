@@ -11,7 +11,7 @@ const App = () => {
             <Route exact path="/signin" component={Signin} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/home" component={Home} />
-            <Redirect from="/" to="/home" />
+            <Redirect to="/home" />
         </Switch>
     );
 };
