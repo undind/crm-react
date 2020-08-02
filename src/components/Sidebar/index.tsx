@@ -1,5 +1,6 @@
 import './_sidebar.scss';
 import React, { FC } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 import {
     UserOutlined,
@@ -21,10 +22,17 @@ type SidebarTypes = {
 };
 
 const Sidebar: FC<SidebarTypes> = ({ collapsed }) => {
+    const history = useHistory();
+
+    const onChangeLick = (props: any) => {
+        if (props.key === 'home') return history.push('/');
+        history.push(`/${props.key}`);
+    };
+
     return (
         <Sider
             trigger={null}
-            width='220px'
+            width='230px'
             collapsible
             collapsed={collapsed}
             style={{
@@ -38,14 +46,14 @@ const Sidebar: FC<SidebarTypes> = ({ collapsed }) => {
             <div className='logo'>
                 <h2>REACT CRM</h2>
             </div>
-            <Menu theme='dark' defaultSelectedKeys={['1']} mode='inline'>
-                <Menu.Item key='dash' icon={<DashboardOutlined />}>
+            <Menu theme='dark' defaultSelectedKeys={['home']} mode='inline'>
+                <Menu.Item key='home' icon={<DashboardOutlined />} onClick={onChangeLick}>
                     Dashboard
                 </Menu.Item>
-                <Menu.Item key='tasks' icon={<FormOutlined />}>
+                <Menu.Item key='tasks' onClick={onChangeLick} icon={<FormOutlined />}>
                     Tasks
                 </Menu.Item>
-                <Menu.Item key='mess' icon={<MessageOutlined />}>
+                <Menu.Item key='messages' onClick={onChangeLick} icon={<MessageOutlined />}>
                     Messages
                 </Menu.Item>
                 <SubMenu

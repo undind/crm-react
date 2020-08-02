@@ -107,7 +107,7 @@ export const accountMenu = (
                 </Link>
             </Menu.Item>
             <Menu.Item>
-                <Link to='/home'>
+                <Link to='/signin'>
                     <LogoutOutlined /> Logout
                 </Link>
             </Menu.Item>
