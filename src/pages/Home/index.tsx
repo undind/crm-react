@@ -17,7 +17,7 @@ const Home: FC = () => {
                 <HeaderApp toggle={toggle} collapsed={collapsed} />
                 <ContentApp>
                     <Switch>
-                        <Route exact path='/home' component={HomePage} />
+                        <Route exact path='/' component={HomePage} />
                     </Switch>
                 </ContentApp>
             </Layout>
