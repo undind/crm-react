@@ -1,7 +1,10 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 
+import { Notification } from '../../../components';
+import { history } from '../../../history';
+
 import * as actionTypes from '../../types/users';
-import { userSignInAction, userSignUpAction } from '../../actions/users';
+import { userSignUpActionSuccess, userSignUpActionError, userSignInActionSuccess } from '../../actions/users';
 import { userLoginLink, userRegistrationLink } from '../../../services/urls/user';
 
 /**
@@ -9,15 +12,24 @@ import { userLoginLink, userRegistrationLink } from '../../../services/urls/user
  * @name userSignIn
  * @description - Sign In user
  */
-function* userSignIn(data: any) {
+function* userSignIn(action: actionTypes.UserLoginAction) {
+    const data = action.payload.data;
+
     try {
         const response = yield call(userLoginLink, data);
 
         if (response) {
-            yield put(userSignInAction(data));
+            yield put(userSignInActionSuccess(response.user));
+            history.push(`/`);
+            Notification('success', 'bottomLeft', ``, `Welcome to your account ${response.user.username}`);
         }
     } catch (e) {
-        console.log(e);
+        if (e?.data?.message) {
+            yield put(userSignUpActionError(e?.data?.message));
+            Notification('error', 'bottomLeft', '', e?.data?.message);
+        } else {
+            Notification('error', 'bottomLeft', '', 'Something went wrong');
+        }
     }
 }
 
@@ -26,15 +38,24 @@ function* userSignIn(data: any) {
  * @name userSignUp
  * @description - Sign Up user
  */
-function* userSignUp(data: any) {
+function* userSignUp(action: actionTypes.UserRegistrationAction) {
+    const data = action.payload.data;
+
     try {
         const response = yield call(userRegistrationLink, data);
 
         if (response) {
-            yield put(userSignUpAction(data));
+            yield put(userSignUpActionSuccess(response));
+            history.push(`/signin`);
+            Notification('success', 'bottomLeft', 'The account has been created', 'You sign in to your account');
         }
     } catch (e) {
-        console.log(e);
+        if (e?.data?.message) {
+            yield put(userSignUpActionError(e?.data?.message));
+            Notification('error', 'bottomLeft', '', e?.data?.message);
+        } else {
+            Notification('error', 'bottomLeft', '', 'Something went wrong');
+        }
     }
 }
 

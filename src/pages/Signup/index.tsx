@@ -2,6 +2,7 @@ import React, { FC, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Form, Input, Button } from 'antd';
+import { StoreValue } from 'rc-field-form/lib/interface';
 
 import { generateFormFields } from '../../services/helpers';
 import { userSignUpAction } from '../../redux/actions/users';
@@ -10,12 +11,11 @@ const Signup: FC = () => {
     const dispacth = useDispatch();
 
     useEffect(() => {
-        document.title = `Sign in`;
+        document.title = `Sign up`;
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const onFinish = (values: any) => {
-        console.log('Finish:', values);
+    const onFinish = (values: StoreValue) => {
         dispacth(userSignUpAction(values));
     };
 

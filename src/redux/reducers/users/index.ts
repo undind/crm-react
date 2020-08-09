@@ -1,11 +1,13 @@
 import * as actionTypes from '../../types/users';
 
 interface State {
+    errorMessage: string;
     isLoading: Boolean;
     user: Array<actionTypes.IUser>;
 }
 
 const initialState: State = {
+    errorMessage: '',
     isLoading: false,
     user: [],
 };
@@ -46,6 +48,7 @@ export default function (state = initialState, action: any) {
             return {
                 ...state,
                 isLoading: false,
+                errorMessage: payload.error,
             };
         default:
             return state;

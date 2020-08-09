@@ -1,7 +1,7 @@
 import instance from '../instance';
 import endpoints from '../endpoints';
 
-import { IUser } from '../../redux/types/users';
+import { IUser, IUserReg } from '../../redux/types/users';
 
 /**
  * @name userLoginLink
@@ -17,6 +17,6 @@ export const userLoginLink = (data: IUser) => {
  * @function
  * @description axios instance - User sing up
  */
-export const userRegistrationLink = (data: IUser) => {
+export const userRegistrationLink = (data: IUserReg) => {
     return instance.post(endpoints.user.sign_up, data);
 };

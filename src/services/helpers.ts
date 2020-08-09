@@ -1,12 +1,12 @@
 type RulesRequired = {
     required: boolean;
     message: string;
-}
+};
 
 type RulesEmail = {
     type: string;
     message: string;
-}
+};
 
 interface InputsProps {
     iconType: string;
@@ -23,7 +23,11 @@ export const generateFormFields = (type: string): Array<InputsProps> => {
             type: 'text',
             placeholder: 'Username',
             name: 'username',
-            rules: [{ required: true, message: 'Please input your User name!' }],
+            rules: [
+                { required: true, message: 'Please input your User name!' },
+                { min: 3, message: 'Username must be at least 3 chars long' },
+                { max: 15, message: 'Username must be no more than 15 characters' },
+            ],
         },
         {
             iconType: 'mail',
@@ -46,7 +50,11 @@ export const generateFormFields = (type: string): Array<InputsProps> => {
             type: 'password',
             placeholder: 'Password',
             name: 'password',
-            rules: [{ required: true, message: 'Please input your Password!' }],
+            rules: [
+                { required: true, message: 'Please input your Password!' },
+                { min: 5, message: 'Password must be at least 5 chars long' },
+                { max: 20, message: 'Password must be no more than 20 characters' },
+            ],
         },
         {
             iconType: 'lock',
