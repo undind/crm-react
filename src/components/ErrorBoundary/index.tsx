@@ -3,7 +3,7 @@ import React, { Component, ErrorInfo } from 'react';
 
 import { IS_PROD } from '../../utils/config';
 
-export default class ErrorBoundary extends Component {
+export default class ErrorBoundaryComponentType extends Component {
     state = { hasError: false };
 
     componentDidCatch(error: Error, info: ErrorInfo) {

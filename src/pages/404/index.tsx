@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 import { Result, Button } from 'antd';
 import { useHistory } from 'react-router-dom';
 
-const NotFoundPage = () => {
+const NotFoundPage: FC = () => {
     const history = useHistory();
 
     useEffect(() => {

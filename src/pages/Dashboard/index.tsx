@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 
-const Dashboard = () => {
+const Dashboard: FC = () => {
     useEffect(() => {
         document.title = `Dashboard`;
         // eslint-disable-next-line react-hooks/exhaustive-deps
