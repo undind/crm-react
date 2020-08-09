@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { Layout } from 'antd';
 
 import { Sidebar, Section, HeaderApp, ContentApp } from '../../components';
-import { DashboardPage, TasksPage } from '../../pages';
+import { DashboardPage, TasksPage, ProfilePage } from '../../pages';
 
 const Home: FC = () => {
     const [collapsed, setCollapsed] = useState(false);
@@ -19,6 +19,7 @@ const Home: FC = () => {
                     <Switch>
                         <Route exact path='/' component={DashboardPage} />
                         <Route exact path='/tasks' component={TasksPage} />
+                        <Route exact path='/profile' component={ProfilePage} />
                     </Switch>
                 </ContentApp>
             </Layout>

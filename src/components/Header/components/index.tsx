@@ -102,7 +102,7 @@ export const accountMenu = (
     <Menu>
         <Menu.ItemGroup title='Account settings'>
             <Menu.Item>
-                <Link to='/home'>
+                <Link to='/profile'>
                     <UserOutlined /> Profile
                 </Link>
             </Menu.Item>

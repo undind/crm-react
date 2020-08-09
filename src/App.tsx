@@ -14,7 +14,7 @@ const App = () => {
             <ConnectedRouter history={history}>
                 <Switch>
                     <Route exact path={['/signin', '/signup']} component={Auth} />
-                    <Route exact path={['/', '/tasks']} component={Home} />
+                    <Route exact path={['/', '/tasks', '/profile']} component={Home} />
                     <Route render={() => <NotFoundPage />} />
                 </Switch>
             </ConnectedRouter>

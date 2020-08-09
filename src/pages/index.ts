@@ -1,4 +1,5 @@
 export { default as NotFoundPage } from './404';
+export { default as ProfilePage } from './Profile';
 export { default as DashboardPage } from './Dashboard';
 export { default as SigninPage } from './Signin';
 export { default as SignupPage } from './Signup';
