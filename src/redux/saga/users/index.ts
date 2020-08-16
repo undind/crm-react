@@ -19,9 +19,10 @@ function* userSignIn(action: actionTypes.UserLoginAction) {
         const response = yield call(userLoginLink, data);
 
         if (response) {
-            yield put(userSignInActionSuccess(response.user));
+            window.localStorage.setItem('token', response.token);
+            yield put(userSignInActionSuccess(response.token));
             history.push(`/`);
-            Notification('success', 'bottomLeft', ``, `Welcome to your account ${response.user.username}`);
+            Notification('success', 'bottomLeft', ``, `Welcome to your account ${data.username}`);
         }
     } catch (e) {
         if (e?.data?.message) {

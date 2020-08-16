@@ -3,13 +3,13 @@ import * as actionTypes from '../../types/users';
 interface State {
     errorMessage: string;
     isLoading: Boolean;
-    user: Array<actionTypes.IUser>;
+    token: string
 }
 
 const initialState: State = {
     errorMessage: '',
     isLoading: false,
-    user: [],
+    token: window.localStorage.token as string || ''
 };
 
 export default function (state = initialState, action: any) {
@@ -25,7 +25,8 @@ export default function (state = initialState, action: any) {
             return {
                 ...state,
                 isLoading: false,
-                user: payload.data,
+                token: payload.data,
+                errorMessage: ''
             };
         case actionTypes.USER_LOGIN_ERROR:
             return {
@@ -42,7 +43,7 @@ export default function (state = initialState, action: any) {
             return {
                 ...state,
                 isLoading: false,
-                user: payload.data,
+                errorMessage: ''
             };
         case actionTypes.USER_REGISTRATION_ERROR:
             return {
