@@ -9,13 +9,23 @@
 
 .logo {
   text-align: center;
+  min-height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   h2 {
     color: #fff;
+    margin-bottom: 0;
   }
 }
 
 .site-layout .site-layout-background {
   background: #fff;
+}
+
+.ant-menu-item:first-child {
+  margin-top: 0;
 }
 
 .sidebar {

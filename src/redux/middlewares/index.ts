@@ -5,10 +5,6 @@ import createSagaMiddleware from 'redux-saga';
 
 export const sagaMiddleware = createSagaMiddleware();
 
-const middlewares = (history: History) =>
-    applyMiddleware(
-        routerMiddleware(history),
-        sagaMiddleware
-    );
+const middlewares = (history: History) => applyMiddleware(routerMiddleware(history), sagaMiddleware);
 
 export default middlewares;

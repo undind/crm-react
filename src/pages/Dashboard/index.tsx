@@ -1,12 +1,12 @@
-import React, { FC, useEffect } from 'react';
+import { FC, useEffect } from 'react';
 
 const Dashboard: FC = () => {
-    useEffect(() => {
-        document.title = `Dashboard`;
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+  useEffect(() => {
+    document.title = `Dashboard`;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-    return <div>Dashboard</div>;
+  return <div>Dashboard</div>;
 };
 
 export default Dashboard;
